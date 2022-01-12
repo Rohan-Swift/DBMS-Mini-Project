@@ -34,22 +34,25 @@ class StartPage(tk.Frame):
     def __init__(self,parent,controller):
         tk.Frame.__init__(self,parent,bg="white")
         self.controller=controller
-        self.controller.title('NRC')
-        #self.controller.state('zoomed')
-        load = Image.open("bg.png")
-        photo=ImageTk.PhotoImage(load)
-        label=tk.Label(self,image=photo)
-        label.image=photo
-        label.place(x=0,y=0)
+        self.controller.title('India')
+        self.controller.state('zoomed')
+        #load = Image.open("20210109_201129.jpg")
+        #photo=ImageTk.PhotoImage(load)
+        #label=tk.Label(self,image=photo)
+        #label.image=photo
+        #label.place(x=0,y=0)
+      
+        mylabel1=tk.Label(self,text='NATIONAL REGISTRATION OF CITIZENSHIP ',font=('Times New Roman',45),foreground='black',background='white')
+        mylabel1.pack(padx=25)
         LeftFrame=tk.Frame(self,bd=0,relief='ridge',bg="white")
         LeftFrame.place(x=400,y=250,width=470,height=300)
         l1 =tk.Label(LeftFrame, font=('Norwester',15),text="Username:",fg='black',bg='white')
         l1.grid(row=1,column=0)
-        t1 =tk.Entry(LeftFrame, font=('Norwester',15),width =15,borderwidth=1, relief="solid")
+        t1 =tk.Entry(LeftFrame, font=('bahnschrift',15),width =15,borderwidth=1, relief="solid")
         t1.grid(row=1,column=1,padx=6,pady=20)
-        l2=tk.Label(LeftFrame, font=('Norwester',15),text="Password:",fg="black",bg="white",padx=1)
+        l2=tk.Label(LeftFrame, font=('bahnschrift',15),text="Password:",fg="black",bg="white",padx=1)
         l2.grid(row=2,column=0)
-        t2=tk.Entry(LeftFrame, font=('Norwester',15),width=15,borderwidth=1, relief="solid")
+        t2=tk.Entry(LeftFrame, font=('bahnschrift',15),width=15,borderwidth=1, relief="solid")
         t2.grid(row=2,column=1,pady=6, padx=20)
         def verify():
             with open("cred.txt", "r") as f:
@@ -62,25 +65,25 @@ class StartPage(tk.Frame):
                         
                         break
                     
-        fs_btn=tk.Button(LeftFrame,text="Submit",font=('Norwester',15),command=verify,fg="#000000",bg='white',padx=1)
+        fs_btn=tk.Button(LeftFrame,text="Submit",font=('bahnschrift',15),command=verify,fg="#000000",bg='white',padx=1)
         fs_btn.grid(row=3,column=1)
-        l4 =tk.Label(LeftFrame, font=('Norwester',15),text="New User! Click Register:",fg='black',bg='white')
+        l4 =tk.Label(LeftFrame, font=('bahnschrift',15),text="New User! Click Register:",fg='black',bg='white')
         l4.grid(row=4,column=0)
         
         def register():
             window=tk.Tk()
             window.title("Register")
-            l1=tk.Label(window,text="User Name",font=('Norwester',15),fg='black',bg='white')
+            l1=tk.Label(window,text="User Name",font=('bahnschrift',15),fg='black',bg='white')
             l1.place(x=10,y=10)
-            t1=tk.Entry(window,font=('Norwester',15),width =15,borderwidth=1, relief="solid")
+            t1=tk.Entry(window,font=('bahnschrift',15),width =15,borderwidth=1, relief="solid")
             t1.place(x=200,y=10)
-            l2=tk.Label(window,text="Password",font=('Norwester',15),fg='black',bg='white')
+            l2=tk.Label(window,text="Password",font=('bahnschrift',15),fg='black',bg='white')
             l2.place(x=10,y=60)
-            t2=tk.Entry(window,font=('Norwester',15),width =15,borderwidth=1, relief="solid")
+            t2=tk.Entry(window,font=('bahnschrift',15),width =15,borderwidth=1, relief="solid")
             t2.place(x=200,y=60)
-            l3=tk.Label(window,text="Re enter password",font=('Norwester',15),fg='black',bg='white')
+            l3=tk.Label(window,text="Re enter password",font=('bahnschrift',15),fg='black',bg='white')
             l3.place(x=10,y=110)
-            t3=tk.Entry(window,font=('Norwester',15),width =15,borderwidth=1, relief="solid")
+            t3=tk.Entry(window,font=('bahnschrift',15),width =15,borderwidth=1, relief="solid")
             t3.place(x=200,y=110)
             def spy():
                 if t1.get()!="" or t2.get()!="" or t3.get()!="":
@@ -93,11 +96,11 @@ class StartPage(tk.Frame):
                 else:
                     messagebox.showinfo("Please provide details!!!")
                     
-            b1=tk.Button(window,text='Sign in',font=('Norwester',15),fg='white',bg='#000000',command=spy)
+            b1=tk.Button(window,text='Sign in',font=('bahnschrift',15),fg='black',bg='white',command=spy)
             b1.place(x=170,y=150)
             window.geometry("470x220")
             window.mainloop()
-        ls_btn=tk.Button(LeftFrame,text="Register",font=('Norwester',15),command=register,fg="#000000",bg='white',padx=1)
+        ls_btn=tk.Button(LeftFrame,text="Register",font=('bahnschrift',15),command=register,fg="black",bg='white',padx=1)
         ls_btn.grid(row=5,column=1)
         
         
@@ -109,48 +112,28 @@ class StartPage(tk.Frame):
 
 class Homepage(tk.Frame):
 
+
     def __init__(self,parent,controller):
-
-        tk.Frame.__init__(self,parent,bg='#7EB1DB')
+        tk.Frame.__init__(self,parent,bg='white')
         self.contoller=controller
-        
-        label1=tk.Label(self,text='TABLE OF CONTENTS',font=('Norwester',35),fg='white',bg='#7EB1DB')
+        label1=tk.Label(self,text='TABLE OF CONTENTS',font=('Helvetica',35),fg='black',bg='white')
         label1.pack(pady=25)
-        
-        b_frame=tk.Frame(self,bg='#7EB1DB')
-        
+        b_frame=tk.Frame(self,bg='white')
         b_frame.pack(fill='both',expand=True)
-
-        
-        
-        fs_btn=tk.Button(b_frame,text="Enter Refugee Details",font=('Norwester',15),bg='white',fg='#2C4072',command=lambda: controller.show_frame(refugeedetails),relief='solid',borderwidth=2,width=25,height=3)
-        fs_btn.grid(row=3,column=2)
-        fs_btn.grid(padx=25)
-        fs_btn.grid(pady=50)
-        fa_btn=tk.Button(b_frame,text="Enter Family Details ",font=('Norwester',15),bg='white',fg='#2C4072',command=lambda: controller.show_frame(refugeefamily),relief='solid',borderwidth=2,width=25,height=3)
-        fa_btn.grid(row=4,column=2)
-        fa_btn.grid(padx=25)
-        fa_btn.grid(pady=50)
-        cr_btn=tk.Button(b_frame,text="Enter Reason for fled",font=('Norwester',15),bg='white',fg='#2C4072',command=lambda: controller.show_frame(flapage),relief='solid',borderwidth=2,width=25,height=3)
-        cr_btn.grid(row=5,column=2)
-        cr_btn.grid(padx=25)
-        cr_btn.grid(pady=50)
-        cr1_btn=tk.Button(b_frame,text="Enter Documents Details",font=('Norwester',15),bg='white',fg='#2C4072',command=lambda: controller.show_frame(mypage),relief='solid',borderwidth=2,width=25,height=3)
-        cr1_btn.grid(row=3,column=5)
-        cr1_btn.grid(padx=930)
-        cr1_btn.grid(pady=50)
-        cr2_btn=tk.Button(b_frame,text="Enter other Details",font=('Norwester',15),bg='white',fg='#2C4072',command=lambda: controller.show_frame(lastpage),relief='solid',borderwidth=2,width=25,height=3)
-        cr2_btn.grid(row=4,column=5)
-        cr2_btn.grid(padx=930)
-        cr2_btn.grid(pady=50)
-        cr3_btn=tk.Button(b_frame,text="View Cancelled Refugees",font=('Norwester',15),bg='white',fg='#2C4072',command=lambda: controller.show_frame(cancelledpage),relief='solid',borderwidth=2,width=25,height=3)
-        cr3_btn.grid(row=5,column=5)
-        cr3_btn.grid(padx=930)
-        cr3_btn.grid(pady=50)
-        cr4_btn=tk.Button(b_frame,text="Exit",font=('Norwester',15),bg='white',fg='#2C4072',command=lambda: controller.show_frame(StartPage),relief='solid',borderwidth=2,width=25,height=3)
-        cr4_btn.grid(row=90,column=2)
-        cr4_btn.grid(padx=25)
-        cr4_btn.grid(pady=50)
+        fs_btn=tk.Button(b_frame,text="Enter Refugee Details",font=('Roboto',15),bg='red',fg='black',command=lambda: controller.show_frame(refugeedetails),relief='solid',borderwidth=2,width=50,height=5)
+        fs_btn.grid(row=3,column=1)
+        fa_btn=tk.Button(b_frame,text="Enter Family Details ",font=('bahnschrift',15),bg='red',fg='black',command=lambda: controller.show_frame(refugeefamily),relief='solid',borderwidth=2,width=50,height=5)
+        fa_btn.grid(row=4,column=1)
+        cr_btn=tk.Button(b_frame,text="Enter Reason for fled",font=('bahnschrift',15),bg='#1a1a1a',fg='black',command=lambda: controller.show_frame(flapage),relief='raised',borderwidth=2,width=50,height=5)
+        cr_btn.grid(row=5,column=1)
+        cr1_btn=tk.Button(b_frame,text="Enter Documents Details",font=('bahnschrift',15),bg='#1a1a1a',fg='black',command=lambda: controller.show_frame(mypage),relief='raised',borderwidth=2,width=50,height=5)
+        cr1_btn.grid(row=3,column=3)
+        cr2_btn=tk.Button(b_frame,text="Enter other Details",font=('bahnschrift',15),bg='#1a1a1a',fg='black',command=lambda: controller.show_frame(lastpage),relief='raised',borderwidth=2,width=50,height=5)
+        cr2_btn.grid(row=4,column=3)
+        cr3_btn=tk.Button(b_frame,text="Cancelled Refugees",font=('bahnschrift',15),bg='#1a1a1a',fg='black',command=lambda: controller.show_frame(cancelledpage),relief='raised',borderwidth=2,width=50,height=5)
+        cr3_btn.grid(row=5,column=3)
+        cr4_btn=tk.Button(b_frame,text="Exit",font=('bahnschrift',15),bg='#1a1a1a',fg='black',command=lambda: controller.show_frame(StartPage),relief='raised',borderwidth=2,width=50,height=5)
+        cr4_btn.grid(row=70,column=2)
         
         
         
@@ -158,53 +141,53 @@ class Homepage(tk.Frame):
 class refugeedetails(tk.Frame):
 
     def __init__(self,parent,controller):
-        tk.Frame.__init__(self,parent,bg='#7EB1DB')
-        label2=tk.Label(self,text='REFUGEE DETAILS',font=('Norwester',40),fg='black',bg='#7EB1DB')
+        tk.Frame.__init__(self,parent,bg='white')
+        label2=tk.Label(self,text='REFUGEE DETAILS',font=('Times New Roman',40),fg='black',bg='white')
         label2.pack()
-        LeftFrame=tk.Frame(self,bd=0,relief='ridge',bg="#7EB1DB")
+        LeftFrame=tk.Frame(self,bd=0,relief='ridge',bg="white")
         LeftFrame.place(x=100,y=100,width=470,height=400)
-        RightFrame=tk.Frame(self,bd=1,relief='ridge',bg="#7EB1DB")
+        RightFrame=tk.Frame(self,bd=1,relief='ridge',bg="white")
         RightFrame.place(x=700,y=100,width=560,height=370)
-        BottomFrame=tk.Frame(self,bd=0,relief='ridge',bg="#7EB1DB")
+        BottomFrame=tk.Frame(self,bd=0,relief='ridge',bg="white")
         BottomFrame.place(x=200,y=550,width=150,height=50)
-        BottomFrame1=tk.Frame(self,bd=0,relief='ridge',bg="#7EB1DB")
+        BottomFrame1=tk.Frame(self,bd=0,relief='ridge',bg="white")
         BottomFrame1.place(x=400,y=550,width=150,height=50)
-        BottomFrame2=tk.Frame(self,bd=0,relief='ridge',bg="#7EB1DB")
+        BottomFrame2=tk.Frame(self,bd=0,relief='ridge',bg="white")
         BottomFrame2.place(x=600,y=550,width=150,height=50)
-        BottomFrame3=tk.Frame(self,bd=0,relief='ridge',bg="#7EB1DB")
+        BottomFrame3=tk.Frame(self,bd=0,relief='ridge',bg="white")
         BottomFrame3.place(x=800,y=550,width=150,height=50)
-        BottomFrame4=tk.Frame(self,bd=0,relief='ridge',bg="#7EB1DB")
+        BottomFrame4=tk.Frame(self,bd=0,relief='ridge',bg="white")
         BottomFrame4.place(x=1000,y=550,width=150,height=50)
-        BottomFrame6=tk.Frame(self,bd=0,relief='ridge',bg="#7EB1DB")
+        BottomFrame6=tk.Frame(self,bd=0,relief='ridge',bg="white")
         BottomFrame6.place(x=1200,y=550,width=150,height=50)
-        BottomFrame5=tk.Frame(self,bd=0,relief='ridge',bg="#7EB1DB")
+        BottomFrame5=tk.Frame(self,bd=0,relief='ridge',bg="white")
         BottomFrame5.place(x=600,y=700,width=200,height=50)
         
-        #main_la=tk.Label(LeftFrame,font=('Norwester',20),text='Flight Schedule Details')
+        #main_la=tk.Label(LeftFrame,font=('bahnschrift',20),text='Flight Schedule Details')
         #main_la.grid()
-        co_no =tk.Label(LeftFrame, font=('Norwester',15),text="Refugee id :",fg='black',bg='white')
+        co_no =tk.Label(LeftFrame, font=('bahnschrift',15),text="Refugee id :",fg='black',bg='white')
         co_no.grid(row=1,column=0)
-        co_no_en =tk.Entry(LeftFrame, font=('Norwester',15),width =15,borderwidth=1, relief="solid")
+        co_no_en =tk.Entry(LeftFrame, font=('bahnschrift',15),width =15,borderwidth=1, relief="solid")
         co_no_en.grid(row=1,column=1,padx=6,pady=20)
-        co_rna=tk.Label(LeftFrame, font=('Norwester',15),text="Name:",fg="black",bg="white",padx=1)
+        co_rna=tk.Label(LeftFrame, font=('bahnschrift',15),text="Name:",fg="black",bg="white",padx=1)
         co_rna.grid(row=3,column=0)
-        co_rna_en=tk.Entry(LeftFrame, font=('Norwester',15),width=15,borderwidth=1, relief="solid")
+        co_rna_en=tk.Entry(LeftFrame, font=('bahnschrift',15),width=15,borderwidth=1, relief="solid")
         co_rna_en.grid(row=3,column=1,pady=6, padx=20)
-        co_age=tk.Label(LeftFrame,font=('Norwester',15),text="Age:",fg='black',bg='white',padx=1)
+        co_age=tk.Label(LeftFrame,font=('bahnnschrift',15),text="Age:",fg='black',bg='white',padx=1)
         co_age.grid(row=5,column=0)
-        co_age_en=tk.Entry(LeftFrame, font=('Norwester',15),width=15,borderwidth=1, relief="solid")
+        co_age_en=tk.Entry(LeftFrame, font=('bahnschrift',15),width=15,borderwidth=1, relief="solid")
         co_age_en.grid(row=5,column=1,pady=6, padx=20)
-        co_nat=tk.Label(LeftFrame,font=('Norwester',15),text="Nationality:",fg='black',bg='white',padx=1)
+        co_nat=tk.Label(LeftFrame,font=('bahnnschrift',15),text="Nationality:",fg='black',bg='white',padx=1)
         co_nat.grid(row=7,column=0)
-        co_nat_en=tk.Entry(LeftFrame, font=('Norwester',15),width=15,borderwidth=1, relief="solid")
+        co_nat_en=tk.Entry(LeftFrame, font=('bahnschrift',15),width=15,borderwidth=1, relief="solid")
         co_nat_en.grid(row=7,column=1,pady=6, padx=20)
-        co_dob=tk.Label(LeftFrame,font=('Norwester',15),text="Date of birth:",fg='black',bg='white',padx=1)
+        co_dob=tk.Label(LeftFrame,font=('bahnnschrift',15),text="Date of birth:",fg='black',bg='white',padx=1)
         co_dob.grid(row=9,column=0)
-        co_dob_en=tk.Entry(LeftFrame, font=('Norwester',15),width=15,borderwidth=1, relief="solid")
+        co_dob_en=tk.Entry(LeftFrame, font=('bahnschrift',15),width=15,borderwidth=1, relief="solid")
         co_dob_en.grid(row=9,column=1,pady=6, padx=20)
-        co_gen=tk.Label(LeftFrame,font=('Norwester',15),text="Gender:",fg='black',bg='white',padx=1)
+        co_gen=tk.Label(LeftFrame,font=('bahnnschrift',15),text="Gender:",fg='black',bg='white',padx=1)
         co_gen.grid(row=12,column=0)
-        co_gen_en=tk.Entry(LeftFrame, font=('Norwester',15),width=15,borderwidth=1, relief="solid")
+        co_gen_en=tk.Entry(LeftFrame, font=('bahnschrift',15),width=15,borderwidth=1, relief="solid")
         co_gen_en.grid(row=12,column=1,pady=6, padx=20)
         
         def submit():
@@ -222,7 +205,7 @@ class refugeedetails(tk.Frame):
                              })
             conn.commit()
             conn.close()
-        s_btn=tk.Button(BottomFrame,font=('Norwester',22),text='Submit',command=submit,fg='black',bg='white',padx=5)
+        s_btn=tk.Button(BottomFrame,font=('bahnschrift',22),text='Submit',command=submit,fg='black',bg='white',padx=5)
         s_btn.grid(row=2,column=1)
         def reset():
             co_no_en.delete(0,'end')
@@ -231,18 +214,18 @@ class refugeedetails(tk.Frame):
             co_nat_en.delete(0,'end')
             co_dob_en.delete(0,'end')
             co_gen_en.delete(0,'end')
-        l_btn=tk.Button(BottomFrame6,font=('Norwester',22),text='Reset',command=reset,fg='black',bg='white',padx=2)
+        l_btn=tk.Button(BottomFrame6,font=('bahnschrift',22),text='Reset',command=reset,fg='black',bg='white',padx=2)
         l_btn.grid(row=2,column=1)
         
         
             
             
     
-        fli_id=tk.Label(LeftFrame,font=('Norwester',15),text='Enter the co ID to delete:',fg='black',bg='white',padx=1)
+        fli_id=tk.Label(LeftFrame,font=('bahnschrift',15),text='Enter the co ID to delete:',fg='black',bg='white',padx=1)
         fli_id.grid(row=13,column=0)
-        fli_id_en=tk.Entry(LeftFrame,font=('Norwester',15),width=15,borderwidth=1, relief="solid")
+        fli_id_en=tk.Entry(LeftFrame,font=('bahnschrift',15),width=15,borderwidth=1, relief="solid")
         fli_id_en.grid(row=13,column=1,pady=6, padx=20)
-        fs_btn=tk.Button(BottomFrame5,text="Back to Contents",font=('Norwester',22),command=lambda: controller.show_frame(Homepage),fg="#000000",bg='white',padx=1)
+        fs_btn=tk.Button(BottomFrame5,text="Back to Contents",font=('bahnschrift',22),command=lambda: controller.show_frame(Homepage),fg="#000000",bg='white',padx=1)
         fs_btn.grid(row=0,column=2)
         
         
@@ -265,7 +248,7 @@ class refugeedetails(tk.Frame):
             conn.close()
         
         
-        delet_btn=tk.Button(BottomFrame1,font=('Norwester',22),text='Delete',command=delete,fg='black',bg='white',padx=2)
+        delet_btn=tk.Button(BottomFrame1,font=('bahnschrift',22),text='Delete',command=delete,fg='black',bg='white',padx=2)
         delet_btn.grid(row=0,column=5)
         
         def viewData():
@@ -330,7 +313,7 @@ class refugeedetails(tk.Frame):
         
         
 
-        d_btn=tk.Button(BottomFrame2,font=('Norwester',22),text='Display',command=viewData,fg='#000000',bg='white',padx=2)
+        d_btn=tk.Button(BottomFrame2,font=('bahnschrift',22),text='Display',command=viewData,fg='#000000',bg='white',padx=2)
         d_btn.grid(row=11,column=0)
         def searchDatabase():
             refugeelist.delete(*refugeelist.get_children())
@@ -344,7 +327,7 @@ class refugeedetails(tk.Frame):
             rows=cur.fetchall()  
             con.close()
             return rows
-        d_btn1=tk.Button(BottomFrame4,font=('Norwester',22),text='Search',command=searchDatabase,fg='#000000',bg='white',padx=1)
+        d_btn1=tk.Button(BottomFrame4,font=('bahnschrift',22),text='Search',command=searchDatabase,fg='#000000',bg='white',padx=1)
         d_btn1.grid(row=15,column=0)
         def update():
             n=co_no_en.get()
@@ -364,14 +347,14 @@ class refugeedetails(tk.Frame):
             
 
 
-        u_btn=tk.Button(BottomFrame3,font=('Norwester',22),text='Update',command=update,fg='#000000',bg='white',padx=2)
+        u_btn=tk.Button(BottomFrame3,font=('bahnschrift',22),text='Update',command=update,fg='#000000',bg='white',padx=2)
         u_btn.grid(row=16,column=0)
             
 class refugeefamily(tk.Frame):
 
     def __init__(self,parent,controller):
         tk.Frame.__init__(self,parent,bg='white')
-        label2=tk.Label(self,text='FAMILY DETAILS',font=('Norwester',40),fg='black', bg='white')
+        label2=tk.Label(self,text='FAMILY DETAILS',font=('Times New Roman',40),fg='black', bg='white')
         label2.pack()
         global sd
         
@@ -395,37 +378,37 @@ class refugeefamily(tk.Frame):
         BottomFrame6.place(x=1200,y=550,width=150,height=50)
         
         
-        fl_no =tk.Label(LeftFrame, font=('Norwester',15),text="Refugee id:",fg='black', bg='white')
+        fl_no =tk.Label(LeftFrame, font=('bahnschrift',15),text="Refugee id:",fg='black', bg='white')
         fl_no.grid(row=1,column=0)
-        fl_no_en =tk.Entry(LeftFrame, font=('Norwester',15),width =15,borderwidth=1, relief="solid")
+        fl_no_en =tk.Entry(LeftFrame, font=('bahnschrift',15),width =15,borderwidth=1, relief="solid")
         fl_no_en.grid(row=1,column=1,padx=6,pady=20)
-        fl_na=tk.Label(LeftFrame, font=('Norwester',15),text="Refugee name:",fg="black",padx=1)
+        fl_na=tk.Label(LeftFrame, font=('bahnschrift',15),text="Refugee name:",fg="black",padx=1)
         fl_na.grid(row=2,column=0)
-        fl_na_en=tk.Entry(LeftFrame, font=('Norwester',15),width=15,borderwidth=1, relief="solid")
+        fl_na_en=tk.Entry(LeftFrame, font=('bahnschrift',15),width=15,borderwidth=1, relief="solid")
         fl_na_en.grid(row=2,column=1,pady=6, padx=20)
-        fl_type=tk.Label(LeftFrame,font=('Norwester',15),text="Father name:",fg='black',padx=1)
+        fl_type=tk.Label(LeftFrame,font=('bahnnschrift',15),text="Father name:",fg='black',padx=1)
         fl_type.grid(row=3,column=0)
-        fl_type_en=tk.Entry(LeftFrame, font=('Norwester',15),width=15,borderwidth=1, relief="solid")
+        fl_type_en=tk.Entry(LeftFrame, font=('bahnschrift',15),width=15,borderwidth=1, relief="solid")
         fl_type_en.grid(row=3,column=1,pady=6, padx=20)
-        fl_from=tk.Label(LeftFrame,font=('Norwester',15),text="Mother name:",fg='black',padx=1)
+        fl_from=tk.Label(LeftFrame,font=('bahnnschrift',15),text="Mother name:",fg='black',padx=1)
         fl_from.grid(row=4,column=0)
-        fl_from_en=tk.Entry(LeftFrame, font=('Norwester',15),width=15,borderwidth=1, relief="solid")
+        fl_from_en=tk.Entry(LeftFrame, font=('bahnschrift',15),width=15,borderwidth=1, relief="solid")
         fl_from_en.grid(row=4,column=1,pady=6, padx=20)
-        fl_de=tk.Label(LeftFrame,font=('Norwester',15),text="Spouse name:",fg='black',padx=1)
+        fl_de=tk.Label(LeftFrame,font=('bahnnschrift',15),text="Spouse name:",fg='black',padx=1)
         fl_de.grid(row=5,column=0)
-        fl_de_en=tk.Entry(LeftFrame, font=('Norwester',15),width=15,borderwidth=1, relief="solid")
+        fl_de_en=tk.Entry(LeftFrame, font=('bahnschrift',15),width=15,borderwidth=1, relief="solid")
         fl_de_en.grid(row=5,column=1,pady=6, padx=20)
-        fl_ca=tk.Label(LeftFrame,font=('Norwester',15),text="Number of Children:",fg='black',padx=1)
+        fl_ca=tk.Label(LeftFrame,font=('bahnnschrift',15),text="Number of Children:",fg='black',padx=1)
         fl_ca.grid(row=6,column=0)
-        fl_ca_en=tk.Entry(LeftFrame, font=('Norwester',15),width=15,borderwidth=1, relief="solid")
+        fl_ca_en=tk.Entry(LeftFrame, font=('bahnschrift',15),width=15,borderwidth=1, relief="solid")
         fl_ca_en.grid(row=6,column=1,pady=6, padx=20)
-        fl_da=tk.Label(LeftFrame,font=('Norwester',15),text="Permanent Address:",fg='black',padx=1)
+        fl_da=tk.Label(LeftFrame,font=('bahnnschrift',15),text="Permanent Address:",fg='black',padx=1)
         fl_da.grid(row=7,column=0)
-        fl_da_en=tk.Entry(LeftFrame, font=('Norwester',15),width=15,borderwidth=1, relief="solid")
+        fl_da_en=tk.Entry(LeftFrame, font=('bahnschrift',15),width=15,borderwidth=1, relief="solid")
         fl_da_en.grid(row=7,column=1,pady=6, padx=20)
-        fl_ti=tk.Label(LeftFrame,font=('Norwester',15),text="Hometown Address:",fg='black',padx=1)
+        fl_ti=tk.Label(LeftFrame,font=('bahnnschrift',15),text="Hometown Address:",fg='black',padx=1)
         fl_ti.grid(row=8,column=0)
-        fl_ti_en=tk.Entry(LeftFrame, font=('Norwester',15),width=15,borderwidth=1, relief="solid")
+        fl_ti_en=tk.Entry(LeftFrame, font=('bahnschrift',15),width=15,borderwidth=1, relief="solid")
         fl_ti_en.grid(row=8,column=1,pady=6, padx=20)
         
         
@@ -447,7 +430,7 @@ class refugeefamily(tk.Frame):
                              })
             conn.commit()
             conn.close()
-        s_btn=tk.Button(BottomFrame,font=('Norwester',22),text='Submit',command=submit,fg='#000000',bg='white',padx=2)
+        s_btn=tk.Button(BottomFrame,font=('bahnschrift',22),text='Submit',command=submit,fg='#000000',bg='white',padx=2)
         s_btn.grid(row=2,column=1)
         def reset():
             fl_no_en.delete(0,'end')
@@ -458,7 +441,7 @@ class refugeefamily(tk.Frame):
             fl_ca_en.delete(0,'end')
             fl_da_en.delete(0,'end')
             fl_ti_en.delete(0,'end')
-        l_btn=tk.Button(BottomFrame6,font=('Norwester',22),text='Reset',command=reset,fg='#000000',bg='white',padx=2)
+        l_btn=tk.Button(BottomFrame6,font=('bahnschrift',22),text='Reset',command=reset,fg='#000000',bg='white',padx=2)
         l_btn.grid(row=2,column=1)
 
         
@@ -469,11 +452,11 @@ class refugeefamily(tk.Frame):
             
             
     
-        fli_id=tk.Label(LeftFrame,font=('Norwester',15),text='Enter the no of childrens to erase:',fg='black',bg='white',padx=1)
+        fli_id=tk.Label(LeftFrame,font=('bahnschrift',15),text='Enter the no of childrens to erase:',fg='black',bg='white',padx=1)
         fli_id.grid(row=12,column=0)
-        fli_id_en=tk.Entry(LeftFrame,font=('Norwester',15),width=15,borderwidth=1, relief="solid")
+        fli_id_en=tk.Entry(LeftFrame,font=('bahnschrift',15),width=15,borderwidth=1, relief="solid")
         fli_id_en.grid(row=12,column=1,pady=6, padx=20)
-        fs_btn=tk.Button(BottomFrame5,text="Back to Contents",font=('Norwester',22),command=lambda: controller.show_frame(Homepage),fg="#000000",bg='white',padx=1)
+        fs_btn=tk.Button(BottomFrame5,text="Back to Contents",font=('bahnschrift',22),command=lambda: controller.show_frame(Homepage),fg="#000000",bg='white',padx=1)
         fs_btn.grid(row=0,column=2)
         
 
@@ -537,7 +520,7 @@ class refugeefamily(tk.Frame):
 
         refugeelist.grid(row=0,column=0,sticky='ns')
 
-        d_btn=tk.Button(BottomFrame2,font=('Norwester',22),text='Display',command=viewData,fg='#000000',bg='white',padx=2)
+        d_btn=tk.Button(BottomFrame2,font=('bahnschrift',22),text='Display',command=viewData,fg='#000000',bg='white',padx=2)
         d_btn.grid(row=11,column=0)
 
         
@@ -564,7 +547,7 @@ class refugeefamily(tk.Frame):
                 cur.execute("DELETE FROM familydetails WHERE no_of_childs ="+fli_id_en.get())
                 con.commit()
                 con.close
-        delet_btn=tk.Button(BottomFrame1,font=('Norwester',22),text='Delete',command=deleteRec,fg='#000000',bg='white',padx=2)
+        delet_btn=tk.Button(BottomFrame1,font=('bahnschrift',22),text='Delete',command=deleteRec,fg='#000000',bg='white',padx=2)
         delet_btn.grid(row=0,column=5)
         
         
@@ -584,7 +567,7 @@ class refugeefamily(tk.Frame):
             
             con.close()
             return rows
-        d_btn1=tk.Button(BottomFrame4,font=('Norwester',22),text='Search',command=searchDatabase,fg='#000000',bg='white',padx=1)
+        d_btn1=tk.Button(BottomFrame4,font=('bahnschrift',22),text='Search',command=searchDatabase,fg='#000000',bg='white',padx=1)
         d_btn1.grid(row=15,column=0)
         
         def update():
@@ -603,7 +586,7 @@ class refugeefamily(tk.Frame):
             c.execute("UPDATE familydetails SET name=?, father_name=?, mother_name=?, souse_name=?,no_of_childs=?,permanent_address=?,hometownaddress=? WHERE refugee_id=? ",(a,m,e,s,i,j,k,n))
             conn.commit()
             conn.close()
-        u_btn=tk.Button(BottomFrame3,font=('Norwester',22),text='Update',command=update,fg='#000000',bg='white',padx=2)
+        u_btn=tk.Button(BottomFrame3,font=('bahnschrift',22),text='Update',command=update,fg='#000000',bg='white',padx=2)
         u_btn.grid(row=16,column=0)
         
 
@@ -616,7 +599,7 @@ class flapage(tk.Frame):
 
     def __init__(self,parent,controller):
         tk.Frame.__init__(self,parent,bg='white')
-        label2=tk.Label(self,text='Enter Reason for fled',font=('Norwester',40),fg='black',bg='white')
+        label2=tk.Label(self,text='Enter Reason for fled',font=('Times New Roman',40),fg='black',bg='white')
         label2.pack()
         LeftFrame=tk.Frame(self,bd=0,relief='ridge',bg="white")
         LeftFrame.place(x=100,y=100,width=470,height=400)
@@ -637,31 +620,31 @@ class flapage(tk.Frame):
         BottomFrame6=tk.Frame(self,bd=0,relief='ridge',bg="white")
         BottomFrame6.place(x=1200,y=550,width=150,height=50)
         
-        #main_la=tk.Label(LeftFrame,font=('Norwester',20),text='Flight Schedule Details')
+        #main_la=tk.Label(LeftFrame,font=('bahnschrift',20),text='Flight Schedule Details')
         #main_la.grid()
-        co_no =tk.Label(LeftFrame, font=('Norwester',15),text="Refugee ID:",fg='black',bg='white')
+        co_no =tk.Label(LeftFrame, font=('bahnschrift',15),text="Refugee ID:",fg='black',bg='white')
         co_no.grid(row=1,column=0)
-        co_no_en =tk.Entry(LeftFrame, font=('Norwester',15),width =15,borderwidth=1, relief="solid")
+        co_no_en =tk.Entry(LeftFrame, font=('bahnschrift',15),width =15,borderwidth=1, relief="solid")
         co_no_en.grid(row=1,column=1,padx=6,pady=20)
-        co_rna=tk.Label(LeftFrame, font=('Norwester',15),text="Refugee Name:",fg="black",bg="white",padx=1)
+        co_rna=tk.Label(LeftFrame, font=('bahnschrift',15),text="Refugee Name:",fg="black",bg="white",padx=1)
         co_rna.grid(row=3,column=0)
-        co_rna_en=tk.Entry(LeftFrame, font=('Norwester',15),width=15,borderwidth=1, relief="solid")
+        co_rna_en=tk.Entry(LeftFrame, font=('bahnschrift',15),width=15,borderwidth=1, relief="solid")
         co_rna_en.grid(row=3,column=1,pady=6, padx=20)
-        co_age=tk.Label(LeftFrame,font=('Norwester',15),text="reasons:",fg='black',bg='white',padx=1)
+        co_age=tk.Label(LeftFrame,font=('bahnnschrift',15),text="reasons:",fg='black',bg='white',padx=1)
         co_age.grid(row=5,column=0)
-        co_age_en=tk.Entry(LeftFrame, font=('Norwester',15),width=15,borderwidth=1, relief="solid")
+        co_age_en=tk.Entry(LeftFrame, font=('bahnschrift',15),width=15,borderwidth=1, relief="solid")
         co_age_en.grid(row=5,column=1,pady=6, padx=20)
-        co_nat=tk.Label(LeftFrame,font=('Norwester',15),text="Present Address:",fg='black',bg='white',padx=1)
+        co_nat=tk.Label(LeftFrame,font=('bahnnschrift',15),text="Present Address:",fg='black',bg='white',padx=1)
         co_nat.grid(row=7,column=0)
-        co_nat_en=tk.Entry(LeftFrame, font=('Norwester',15),width=15,borderwidth=1, relief="solid")
+        co_nat_en=tk.Entry(LeftFrame, font=('bahnschrift',15),width=15,borderwidth=1, relief="solid")
         co_nat_en.grid(row=7,column=1,pady=6, padx=20)
-        co_dob=tk.Label(LeftFrame,font=('Norwester',15),text="Present Occupation:",fg='black',bg='white',padx=1)
+        co_dob=tk.Label(LeftFrame,font=('bahnnschrift',15),text="Present Occupation:",fg='black',bg='white',padx=1)
         co_dob.grid(row=9,column=0)
-        co_dob_en=tk.Entry(LeftFrame, font=('Norwester',15),width=15,borderwidth=1, relief="solid")
+        co_dob_en=tk.Entry(LeftFrame, font=('bahnschrift',15),width=15,borderwidth=1, relief="solid")
         co_dob_en.grid(row=9,column=1,pady=6, padx=20)
-        co_gen=tk.Label(LeftFrame,font=('Norwester',15),text="Duration Of Stay:",fg='black',bg='white',padx=1)
+        co_gen=tk.Label(LeftFrame,font=('bahnnschrift',15),text="Duration Of Stay:",fg='black',bg='white',padx=1)
         co_gen.grid(row=12,column=0)
-        co_gen_en=tk.Entry(LeftFrame, font=('Norwester',15),width=15,borderwidth=1, relief="solid")
+        co_gen_en=tk.Entry(LeftFrame, font=('bahnschrift',15),width=15,borderwidth=1, relief="solid")
         co_gen_en.grid(row=12,column=1,pady=6, padx=20)
         
         
@@ -680,7 +663,7 @@ class flapage(tk.Frame):
                              })
             conn.commit()
             conn.close()
-        s_btn=tk.Button(BottomFrame,font=('Norwester',22),text='Submit',command=submit,fg='#000000',bg='white',padx=2)
+        s_btn=tk.Button(BottomFrame,font=('bahnschrift',22),text='Submit',command=submit,fg='#000000',bg='white',padx=2)
         s_btn.grid(row=2,column=1)
         def reset():
             co_no_en.delete(0,'end')
@@ -689,7 +672,7 @@ class flapage(tk.Frame):
             co_nat_en.delete(0,'end')
             co_dob_en.delete(0,'end')
             co_gen_en.delete(0,'end')
-        l_btn=tk.Button(BottomFrame6,font=('Norwester',22),text='Reset',command=reset,fg='#000000',bg='white',padx=2)
+        l_btn=tk.Button(BottomFrame6,font=('bahnschrift',22),text='Reset',command=reset,fg='#000000',bg='white',padx=2)
         l_btn.grid(row=2,column=1)
         
         
@@ -699,11 +682,11 @@ class flapage(tk.Frame):
             
             
     
-        fli_id=tk.Label(LeftFrame,font=('Norwester',15),text='Enter the duration of stay to delete:',fg='black',bg='white',padx=1)
+        fli_id=tk.Label(LeftFrame,font=('bahnschrift',15),text='Enter the duration of stay to delete:',fg='black',bg='white',padx=1)
         fli_id.grid(row=13,column=0)
-        fli_id_en=tk.Entry(LeftFrame,font=('Norwester',15),width=15,borderwidth=1, relief="solid")
+        fli_id_en=tk.Entry(LeftFrame,font=('bahnschrift',15),width=15,borderwidth=1, relief="solid")
         fli_id_en.grid(row=13,column=1,pady=6, padx=20)
-        fs_btn=tk.Button(BottomFrame5,text="Back to Contents",font=('Norwester',22),command=lambda: controller.show_frame(Homepage),fg="#000000",bg='white',padx=1)
+        fs_btn=tk.Button(BottomFrame5,text="Back to Contents",font=('bahnschrift',22),command=lambda: controller.show_frame(Homepage),fg="#000000",bg='white',padx=1)
         fs_btn.grid(row=0,column=2)
         
         
@@ -726,7 +709,7 @@ class flapage(tk.Frame):
             conn.close()
         
         
-        delet_btn=tk.Button(BottomFrame1,font=('Norwester',22),text='Delete',command=delete,fg='#000000',bg='white',padx=2)
+        delet_btn=tk.Button(BottomFrame1,font=('bahnschrift',22),text='Delete',command=delete,fg='#000000',bg='white',padx=2)
         delet_btn.grid(row=0,column=5)
         
         def viewData():
@@ -791,7 +774,7 @@ class flapage(tk.Frame):
         
         
 
-        d_btn=tk.Button(BottomFrame2,font=('Norwester',22),text='Display',command=viewData,fg='#000000',bg='white',padx=2)
+        d_btn=tk.Button(BottomFrame2,font=('bahnschrift',22),text='Display',command=viewData,fg='#000000',bg='white',padx=2)
         d_btn.grid(row=11,column=0)
         def searchDatabase():
             refugeelist.delete(*refugeelist.get_children())
@@ -805,7 +788,7 @@ class flapage(tk.Frame):
             rows=cur.fetchall()  
             con.close()
             return rows
-        d_btn1=tk.Button(BottomFrame4,font=('Norwester',22),text='Search',command=searchDatabase,fg='#000000',bg='white',padx=1)
+        d_btn1=tk.Button(BottomFrame4,font=('bahnschrift',22),text='Search',command=searchDatabase,fg='#000000',bg='white',padx=1)
         d_btn1.grid(row=15,column=0)
         def update():
             n=co_no_en.get()
@@ -825,14 +808,14 @@ class flapage(tk.Frame):
             
 
 
-        u_btn=tk.Button(BottomFrame3,font=('Norwester',22),text='Update',command=update,fg='#000000',bg='white',padx=2)
+        u_btn=tk.Button(BottomFrame3,font=('bahnschrift',22),text='Update',command=update,fg='#000000',bg='white',padx=2)
         u_btn.grid(row=16,column=0)
 
 class mypage(tk.Frame):
 
     def __init__(self,parent,controller):
         tk.Frame.__init__(self,parent,bg='white')
-        label2=tk.Label(self,text='Enter Documents Details',font=('Norwester',40),fg='black',bg='white')
+        label2=tk.Label(self,text='Enter Documents Details',font=('Times New Roman',40),fg='black',bg='white')
         label2.pack()
         LeftFrame=tk.Frame(self,bd=0,relief='ridge',bg="white")
         LeftFrame.place(x=100,y=100,width=470,height=400)
@@ -853,36 +836,36 @@ class mypage(tk.Frame):
         BottomFrame6=tk.Frame(self,bd=0,relief='ridge',bg="white")
         BottomFrame6.place(x=1200,y=550,width=150,height=50)
         
-        #main_la=tk.Label(LeftFrame,font=('Norwester',20),text='Flight Schedule Details')
+        #main_la=tk.Label(LeftFrame,font=('bahnschrift',20),text='Flight Schedule Details')
         #main_la.grid()
-        co_no =tk.Label(LeftFrame, font=('Norwester',15),text="Refugee ID:",fg='black',bg='white')
+        co_no =tk.Label(LeftFrame, font=('bahnschrift',15),text="Refugee ID:",fg='black',bg='white')
         co_no.grid(row=1,column=0)
-        co_no_en =tk.Entry(LeftFrame, font=('Norwester',15),width =15,borderwidth=1, relief="solid")
+        co_no_en =tk.Entry(LeftFrame, font=('bahnschrift',15),width =15,borderwidth=1, relief="solid")
         co_no_en.grid(row=1,column=1,padx=6,pady=20)
-        co_fna=tk.Label(LeftFrame, font=('Norwester',15),text="Refugee name:",fg="black",bg="white",padx=1)
+        co_fna=tk.Label(LeftFrame, font=('bahnschrift',15),text="Refugee name:",fg="black",bg="white",padx=1)
         co_fna.grid(row=3,column=0)
-        co_fna_en=tk.Entry(LeftFrame, font=('Norwester',15),width=15,borderwidth=1, relief="solid")
+        co_fna_en=tk.Entry(LeftFrame, font=('bahnschrift',15),width=15,borderwidth=1, relief="solid")
         co_fna_en.grid(row=3,column=1,pady=6, padx=20)
-        co_lna=tk.Label(LeftFrame,font=('Norwester',15),text="NRC Code:",fg='black',bg='white',padx=1)
+        co_lna=tk.Label(LeftFrame,font=('bahnnschrift',15),text="NRC Code:",fg='black',bg='white',padx=1)
         co_lna.grid(row=5,column=0)
-        co_lna_en=tk.Entry(LeftFrame, font=('Norwester',15),width=15,borderwidth=1, relief="solid")
+        co_lna_en=tk.Entry(LeftFrame, font=('bahnschrift',15),width=15,borderwidth=1, relief="solid")
         co_lna_en.grid(row=5,column=1,pady=6, padx=20)
-        co_cno=tk.Label(LeftFrame,font=('Norwester',15),text="Caste:",fg='black',bg='white',padx=1)
+        co_cno=tk.Label(LeftFrame,font=('bahnnschrift',15),text="Caste:",fg='black',bg='white',padx=1)
         co_cno.grid(row=7,column=0)
-        co_cno_en=tk.Entry(LeftFrame, font=('Norwester',15),width=15,borderwidth=1, relief="solid")
+        co_cno_en=tk.Entry(LeftFrame, font=('bahnschrift',15),width=15,borderwidth=1, relief="solid")
         co_cno_en.grid(row=7,column=1,pady=6, padx=20)
-        co_age=tk.Label(LeftFrame,font=('Norwester',15),text="Criminal cases:",fg='black',bg='white',padx=1)
+        co_age=tk.Label(LeftFrame,font=('bahnnschrift',15),text="Criminal cases:",fg='black',bg='white',padx=1)
         co_age.grid(row=9,column=0)
-        co_age_en=tk.Entry(LeftFrame, font=('Norwester',15),width=15,borderwidth=1, relief="solid")
+        co_age_en=tk.Entry(LeftFrame, font=('bahnschrift',15),width=15,borderwidth=1, relief="solid")
         co_age_en.grid(row=9,column=1,pady=6, padx=20)
-        co_assf=tk.Label(LeftFrame,font=('Norwester',15),text="Bank account no:",fg='black',bg='white',padx=1)
+        co_assf=tk.Label(LeftFrame,font=('bahnnschrift',15),text="Bank account no:",fg='black',bg='white',padx=1)
         co_assf.grid(row=12,column=0)
-        co_assf_en=tk.Entry(LeftFrame, font=('Norwester',15),width=15,borderwidth=1, relief="solid")
+        co_assf_en=tk.Entry(LeftFrame, font=('bahnschrift',15),width=15,borderwidth=1, relief="solid")
         co_assf_en.grid(row=12,column=1,pady=6, padx=20)
         
-        co_email=tk.Label(LeftFrame,font=('Norwester',15),text="religon:",fg='black',bg='white',padx=1)
+        co_email=tk.Label(LeftFrame,font=('bahnnschrift',15),text="religon:",fg='black',bg='white',padx=1)
         co_email.grid(row=13,column=0)
-        co_email_en=tk.Entry(LeftFrame, font=('Norwester',15),width=15,borderwidth=1, relief="solid")
+        co_email_en=tk.Entry(LeftFrame, font=('bahnschrift',15),width=15,borderwidth=1, relief="solid")
         co_email_en.grid(row=13,column=1,pady=6, padx=20)
         
         def submit():
@@ -901,7 +884,7 @@ class mypage(tk.Frame):
                              })
             conn.commit()
             conn.close()
-        s_btn=tk.Button(BottomFrame,font=('Norwester',22),text='Submit',command=submit,fg='#000000',bg='white',padx=2)
+        s_btn=tk.Button(BottomFrame,font=('bahnschrift',22),text='Submit',command=submit,fg='#000000',bg='white',padx=2)
         s_btn.grid(row=2,column=1)
         def reset():
             co_no_en.delete(0,'end')
@@ -911,7 +894,7 @@ class mypage(tk.Frame):
             co_cno_en.delete(0,'end')
             co_assf_en.delete(0,'end')
             co_email_en.delete(0,'end')
-        l_btn=tk.Button(BottomFrame6,font=('Norwester',22),text='Reset',command=reset,fg='#000000',bg='white',padx=2)
+        l_btn=tk.Button(BottomFrame6,font=('bahnschrift',22),text='Reset',command=reset,fg='#000000',bg='white',padx=2)
         l_btn.grid(row=2,column=1)
         
         
@@ -919,11 +902,11 @@ class mypage(tk.Frame):
             
             
     
-        fli_id=tk.Label(LeftFrame,font=('Norwester',15),text='Enter the NRC_code to delete:',fg='black',bg='white',padx=1)
+        fli_id=tk.Label(LeftFrame,font=('bahnschrift',15),text='Enter the NRC_code to delete:',fg='black',bg='white',padx=1)
         fli_id.grid(row=15,column=0)
-        fli_id_en=tk.Entry(LeftFrame,font=('Norwester',15),width=15,borderwidth=1, relief="solid")
+        fli_id_en=tk.Entry(LeftFrame,font=('bahnschrift',15),width=15,borderwidth=1, relief="solid")
         fli_id_en.grid(row=15,column=1,pady=6, padx=20)
-        fs_btn=tk.Button(BottomFrame5,text="Back to Contents",font=('Norwester',22),command=lambda: controller.show_frame(Homepage),fg="#000000",bg='white',padx=1)
+        fs_btn=tk.Button(BottomFrame5,text="Back to Contents",font=('bahnschrift',22),command=lambda: controller.show_frame(Homepage),fg="#000000",bg='white',padx=1)
         fs_btn.grid(row=0,column=2)
         
         
@@ -946,7 +929,7 @@ class mypage(tk.Frame):
             conn.close()
         
         
-        delet_btn=tk.Button(BottomFrame1,font=('Norwester',22),text='Delete',command=delete,fg='#000000',bg='white',padx=2)
+        delet_btn=tk.Button(BottomFrame1,font=('bahnschrift',22),text='Delete',command=delete,fg='#000000',bg='white',padx=2)
         delet_btn.grid(row=0,column=5)
         
         def viewData():
@@ -1014,7 +997,7 @@ class mypage(tk.Frame):
         
         
 
-        d_btn=tk.Button(BottomFrame2,font=('Norwester',22),text='Display',command=viewData,fg='#000000',bg='white',padx=2)
+        d_btn=tk.Button(BottomFrame2,font=('bahnschrift',22),text='Display',command=viewData,fg='#000000',bg='white',padx=2)
         d_btn.grid(row=11,column=0)
         def searchDatabase():
             refugeelist.delete(*refugeelist.get_children())
@@ -1028,7 +1011,7 @@ class mypage(tk.Frame):
             rows=cur.fetchall()  
             con.close()
             return rows
-        d_btn1=tk.Button(BottomFrame4,font=('Norwester',22),text='Search',command=searchDatabase,fg='#000000',bg='white',padx=1)
+        d_btn1=tk.Button(BottomFrame4,font=('bahnschrift',22),text='Search',command=searchDatabase,fg='#000000',bg='white',padx=1)
         d_btn1.grid(row=15,column=0)
         def update():
             n=co_no_en.get()
@@ -1049,13 +1032,13 @@ class mypage(tk.Frame):
             
 
 
-        u_btn=tk.Button(BottomFrame3,font=('Norwester',22),text='Update',command=update,fg='#000000',bg='white',padx=2)
+        u_btn=tk.Button(BottomFrame3,font=('bahnschrift',22),text='Update',command=update,fg='#000000',bg='white',padx=2)
         u_btn.grid(row=16,column=0)
 class lastpage(tk.Frame):
 
     def __init__(self,parent,controller):
         tk.Frame.__init__(self,parent,bg='white')
-        label2=tk.Label(self,text='Enter Personal Identification Details',font=('Norwester',40),fg='black',bg='white')
+        label2=tk.Label(self,text='Enter Personal Identification Details',font=('Times New Roman',40),fg='black',bg='white')
         label2.pack()
         LeftFrame=tk.Frame(self,bd=0,relief='ridge',bg="white")
         LeftFrame.place(x=100,y=100,width=470,height=400)
@@ -1077,31 +1060,31 @@ class lastpage(tk.Frame):
         BottomFrame5=tk.Frame(self,bd=0,relief='ridge',bg="white")
         BottomFrame5.place(x=600,y=650,width=200,height=50)
         
-        #main_la=tk.Label(LeftFrame,font=('Norwester',20),text='Flight Schedule Details')
+        #main_la=tk.Label(LeftFrame,font=('bahnschrift',20),text='Flight Schedule Details')
         #main_la.grid()
-        co_no =tk.Label(LeftFrame, font=('Norwester',15),text="refugee_id:",fg='black',bg='white')
+        co_no =tk.Label(LeftFrame, font=('bahnschrift',15),text="refugee_id:",fg='black',bg='white')
         co_no.grid(row=1,column=0)
-        co_no_en =tk.Entry(LeftFrame, font=('Norwester',15),width =15,borderwidth=1, relief="solid")
+        co_no_en =tk.Entry(LeftFrame, font=('bahnschrift',15),width =15,borderwidth=1, relief="solid")
         co_no_en.grid(row=1,column=1,padx=6,pady=20)
-        co_fna=tk.Label(LeftFrame, font=('Norwester',15),text="References:",fg="black",bg="white",padx=1)
+        co_fna=tk.Label(LeftFrame, font=('bahnschrift',15),text="References:",fg="black",bg="white",padx=1)
         co_fna.grid(row=3,column=0)
-        co_fna_en=tk.Entry(LeftFrame, font=('Norwester',15),width=15,borderwidth=1, relief="solid")
+        co_fna_en=tk.Entry(LeftFrame, font=('bahnschrift',15),width=15,borderwidth=1, relief="solid")
         co_fna_en.grid(row=3,column=1,pady=6, padx=20)
-        co_lna=tk.Label(LeftFrame,font=('Norwester',15),text="Relationship:",fg='black',bg='white',padx=1)
+        co_lna=tk.Label(LeftFrame,font=('bahnnschrift',15),text="Relationship:",fg='black',bg='white',padx=1)
         co_lna.grid(row=5,column=0)
-        co_lna_en=tk.Entry(LeftFrame, font=('Norwester',15),width=15,borderwidth=1, relief="solid")
+        co_lna_en=tk.Entry(LeftFrame, font=('bahnschrift',15),width=15,borderwidth=1, relief="solid")
         co_lna_en.grid(row=5,column=1,pady=6, padx=20)
-        co_cno=tk.Label(LeftFrame,font=('Norwester',15),text="Houseless:",fg='black',bg='white',padx=1)
+        co_cno=tk.Label(LeftFrame,font=('bahnnschrift',15),text="Houseless:",fg='black',bg='white',padx=1)
         co_cno.grid(row=7,column=0)
-        co_cno_en=tk.Entry(LeftFrame, font=('Norwester',15),width=15,borderwidth=1, relief="solid")
+        co_cno_en=tk.Entry(LeftFrame, font=('bahnschrift',15),width=15,borderwidth=1, relief="solid")
         co_cno_en.grid(row=7,column=1,pady=6, padx=20)
-        co_age=tk.Label(LeftFrame,font=('Norwester',15),text="Medical records:",fg='black',bg='white',padx=1)
+        co_age=tk.Label(LeftFrame,font=('bahnnschrift',15),text="Medical records:",fg='black',bg='white',padx=1)
         co_age.grid(row=9,column=0)
-        co_age_en=tk.Entry(LeftFrame, font=('Norwester',15),width=15,borderwidth=1, relief="solid")
+        co_age_en=tk.Entry(LeftFrame, font=('bahnschrift',15),width=15,borderwidth=1, relief="solid")
         co_age_en.grid(row=9,column=1,pady=6, padx=20)
-        co_email=tk.Label(LeftFrame,font=('Norwester',15),text="vis_dist_mark:",fg='black',bg='white',padx=1)
+        co_email=tk.Label(LeftFrame,font=('bahnnschrift',15),text="vis_dist_mark:",fg='black',bg='white',padx=1)
         co_email.grid(row=12,column=0)
-        co_email_en=tk.Entry(LeftFrame, font=('Norwester',15),width=15,borderwidth=1, relief="solid")
+        co_email_en=tk.Entry(LeftFrame, font=('bahnschrift',15),width=15,borderwidth=1, relief="solid")
         co_email_en.grid(row=12,column=1,pady=6, padx=20)
         
         def submit():
@@ -1119,7 +1102,7 @@ class lastpage(tk.Frame):
                              })
             conn.commit()
             conn.close()
-        s_btn=tk.Button(BottomFrame,font=('Norwester',22),text='Submit',command=submit,fg='#000000',bg='white',padx=2)
+        s_btn=tk.Button(BottomFrame,font=('bahnschrift',22),text='Submit',command=submit,fg='#000000',bg='white',padx=2)
         s_btn.grid(row=2,column=1)
         def reset():
             co_no_en.delete(0,'end')
@@ -1128,7 +1111,7 @@ class lastpage(tk.Frame):
             co_cno_en.delete(0,'end')
             co_age_en.delete(0,'end')
             co_email_en.delete(0,'end')
-        l_btn=tk.Button(BottomFrame6,font=('Norwester',22),text='Reset',command=reset,fg='#000000',bg='white',padx=2)
+        l_btn=tk.Button(BottomFrame6,font=('bahnschrift',22),text='Reset',command=reset,fg='#000000',bg='white',padx=2)
         l_btn.grid(row=2,column=1)
 
             
@@ -1138,11 +1121,11 @@ class lastpage(tk.Frame):
             
             
     
-        fli_id=tk.Label(LeftFrame,font=('Norwester',15),text='Enter the medical_records to delete:',fg='black',bg='white',padx=1)
+        fli_id=tk.Label(LeftFrame,font=('bahnschrift',15),text='Enter the medical_records to delete:',fg='black',bg='white',padx=1)
         fli_id.grid(row=13,column=0)
-        fli_id_en=tk.Entry(LeftFrame,font=('Norwester',15),width=15,borderwidth=1, relief="solid")
+        fli_id_en=tk.Entry(LeftFrame,font=('bahnschrift',15),width=15,borderwidth=1, relief="solid")
         fli_id_en.grid(row=13,column=1,pady=6, padx=20)
-        fs_btn=tk.Button(BottomFrame5,text="Back to Contents",font=('Norwester',22),command=lambda: controller.show_frame(Homepage),fg="#000000",bg='white',padx=1)
+        fs_btn=tk.Button(BottomFrame5,text="Back to Contents",font=('bahnschrift',22),command=lambda: controller.show_frame(Homepage),fg="#000000",bg='white',padx=1)
         fs_btn.grid(row=0,column=2)
         
         
@@ -1165,7 +1148,7 @@ class lastpage(tk.Frame):
             conn.close()
         
         
-        delet_btn=tk.Button(BottomFrame1,font=('Norwester',22),text='Delete',command=delete,fg='#000000',bg='white',padx=2)
+        delet_btn=tk.Button(BottomFrame1,font=('bahnschrift',22),text='Delete',command=delete,fg='#000000',bg='white',padx=2)
         delet_btn.grid(row=0,column=5)
         
         def viewData():
@@ -1231,7 +1214,7 @@ class lastpage(tk.Frame):
         
         
 
-        d_btn=tk.Button(BottomFrame2,font=('Norwester',22),text='Display',command=viewData,fg='#000000',bg='white',padx=2)
+        d_btn=tk.Button(BottomFrame2,font=('bahnschrift',22),text='Display',command=viewData,fg='#000000',bg='white',padx=2)
         d_btn.grid(row=11,column=0)
         def searchDatabase():
             refugeelist.delete(*refugeelist.get_children())
@@ -1245,7 +1228,7 @@ class lastpage(tk.Frame):
             rows=cur.fetchall()  
             con.close()
             return rows
-        d_btn1=tk.Button(BottomFrame4,font=('Norwester',22),text='Search',command=searchDatabase,fg='#000000',bg='white',padx=1)
+        d_btn1=tk.Button(BottomFrame4,font=('bahnschrift',22),text='Search',command=searchDatabase,fg='#000000',bg='white',padx=1)
         d_btn1.grid(row=15,column=0)
         def update():
             n=co_no_en.get()
@@ -1265,13 +1248,13 @@ class lastpage(tk.Frame):
             
 
 
-        u_btn=tk.Button(BottomFrame3,font=('Norwester',22),text='Update',command=update,fg='#000000',bg='white',padx=2)
+        u_btn=tk.Button(BottomFrame3,font=('bahnschrift',22),text='Update',command=update,fg='#000000',bg='white',padx=2)
         u_btn.grid(row=16,column=0)
 class cancelledpage(tk.Frame):
 
     def __init__(self,parent,controller):
         tk.Frame.__init__(self,parent,bg='white')
-        label2=tk.Label(self,text='Cancelled Refugee ID',font=('Norwester',40),fg='black',bg='white')
+        label2=tk.Label(self,text='Cancelled Refugee ID',font=('bahnschrift',40),fg='black',bg='white')
         label2.pack()
         RightFrame=tk.Frame(self,bd=1,relief='ridge',bg="white")
         RightFrame.place(x=500,y=100,width=560,height=370)
@@ -1315,9 +1298,9 @@ class cancelledpage(tk.Frame):
                         for num in row:
                             
                             refugeelist.insert('','end',value=num)
-        d_btn=tk.Button(BottomFrame2,font=('Norwester',22),text='View Cancelled refugees',command=viewData,fg='black',bg='white',padx=2)
+        d_btn=tk.Button(BottomFrame2,font=('bahnschrift',22),text='View Cancelled refugees',command=viewData,fg='black',bg='white',padx=2)
         d_btn.grid(row=11,column=0)
-        fs_btn=tk.Button(BottomFrame5,text="Back to Contents",font=('Norwester',22),command=lambda: controller.show_frame(Homepage),fg="black",bg='white',padx=1)
+        fs_btn=tk.Button(BottomFrame5,text="Back to Contents",font=('bahnschrift',22),command=lambda: controller.show_frame(Homepage),fg="black",bg='white',padx=1)
         fs_btn.grid(row=0,column=2)
             
             

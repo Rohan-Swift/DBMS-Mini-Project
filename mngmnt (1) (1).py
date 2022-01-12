@@ -36,11 +36,11 @@ class StartPage(tk.Frame):
         self.controller=controller
         self.controller.title('India')
         self.controller.state('zoomed')
-        #load = Image.open("20210109_201129.jpg")
-        #photo=ImageTk.PhotoImage(load)
-        #label=tk.Label(self,image=photo)
-        #label.image=photo
-        #label.place(x=0,y=0)
+        load = Image.open("bg.png")
+        photo=ImageTk.PhotoImage(load)
+        label=tk.Label(self,image=photo)
+        label.image=photo
+        label.place(x=0,y=0)
       
         mylabel1=tk.Label(self,text='NATIONAL REGISTRATION OF CITIZENSHIP ',font=('Times New Roman',45),foreground='black',background='white')
         mylabel1.pack(padx=25)
@@ -109,9 +109,7 @@ class StartPage(tk.Frame):
         
         
 
-
 class Homepage(tk.Frame):
-
 
     def __init__(self,parent,controller):
         tk.Frame.__init__(self,parent,bg='white')
@@ -134,6 +132,12 @@ class Homepage(tk.Frame):
         cr3_btn.grid(row=5,column=3)
         cr4_btn=tk.Button(b_frame,text="Exit",font=('bahnschrift',15),bg='#1a1a1a',fg='black',command=lambda: controller.show_frame(StartPage),relief='raised',borderwidth=2,width=50,height=5)
         cr4_btn.grid(row=70,column=2)
+        load = Image.open("bg0.png")
+        resize_image = load.resize((320, 320))
+        photo=ImageTk.PhotoImage(resize_image)
+        label=tk.Label(self,image=photo)
+        label.image=photo
+        label.place(x=650,y=70)
         
         
         

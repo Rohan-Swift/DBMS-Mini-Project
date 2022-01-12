@@ -43,7 +43,7 @@ class StartPage(tk.Frame):
         label.place(x=0,y=0)
         LeftFrame=tk.Frame(self,bd=0,relief='ridge',bg="white")
         LeftFrame.place(x=400,y=250,width=470,height=300)
-        l1 =tk.Label(LeftFrame, font=('MS Sans Serif',15),text="Username:",fg='black',bg='white')
+        l1 =tk.Label(LeftFrame, font=('Norwester',15),text="Username:",fg='black',bg='white')
         l1.grid(row=1,column=0)
         t1 =tk.Entry(LeftFrame, font=('Norwester',15),width =15,borderwidth=1, relief="solid")
         t1.grid(row=1,column=1,padx=6,pady=20)
